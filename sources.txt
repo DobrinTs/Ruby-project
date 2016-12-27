@@ -9,3 +9,6 @@ https://github.com/janko-m/sinatra-activerecord
 http://guides.rubyonrails.org/active_record_basics.html
 
 http://guides.rubyonrails.org/active_record_migrations.html
+
+
+https://github.com/georgyangelov/sinatra-example !!!!!
