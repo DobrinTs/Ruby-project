@@ -1,0 +1,11 @@
+https://github.com/fmi/ruby-course-projects/blob/master/sample_projects/movies.md
+
+https://github.com/fmi/ruby-course-projects/blob/master/course_projects.md
+
+https://github.com/fmi/ruby-course-projects/blob/master/web_with_sinatra.md
+
+https://github.com/janko-m/sinatra-activerecord
+
+http://guides.rubyonrails.org/active_record_basics.html
+
+http://guides.rubyonrails.org/active_record_migrations.html
