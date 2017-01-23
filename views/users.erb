@@ -1,0 +1,8 @@
+<% if @users.empty? %>
+    В момента няма такива. Бъди първия, който ще ни пише!
+<% end %>
+<% @users.each do |user| %>
+    <p>
+        <%= user.name %>
+    </p>
+<% end %>

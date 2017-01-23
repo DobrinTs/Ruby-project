@@ -12,3 +12,5 @@ http://guides.rubyonrails.org/active_record_migrations.html
 
 
 https://github.com/georgyangelov/sinatra-example !!!!!
+
+http://guides.rubyonrails.org/association_basics.html

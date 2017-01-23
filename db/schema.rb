@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20161229084642) do
     t.string  "description"
     t.string  "genre"
     t.float   "rating"
+    t.integer "number_of_votes"
+  end
+
+  create_table "movies_people", id: false, force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "person_id"
+    t.index ["movie_id"], name: "index_movies_people_on_movie_id"
+    t.index ["person_id"], name: "index_movies_people_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -28,7 +36,8 @@ ActiveRecord::Schema.define(version: 20161229084642) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "name"
+    t.string "email"
     t.string "password"
     t.string "rank"
   end
