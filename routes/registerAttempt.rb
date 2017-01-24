@@ -7,6 +7,7 @@ post '/register_attempt' do
   redirect '/'
 end
 
+# само за лична употреба
 get '/users' do
   @users = User.all
 

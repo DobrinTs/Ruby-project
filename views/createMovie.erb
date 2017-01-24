@@ -1,0 +1,53 @@
+<h1>Създаване на нов филм</h1>
+
+<form method="post" action="/finish_movie_creation">
+    <div class="form-group">
+        <label for="name-input">Име</label>
+        <input id="name-input"
+               class="form-control"
+               name="movie_name"
+               type="text"
+               placeholder="Movie name"
+               required>
+    </div>
+
+    <div class="form-group">
+        <label for="Year-input">Година</label>
+        <input id="year-input"
+                class="form-control"
+                name="year"
+                type="number"
+                placeholder="Year">
+    </div>
+
+    <div class="form-group">
+        <label for="Length-input">Продължителност</label>
+        <input id="length-input"
+                class="form-control"
+                name="length"
+                type="number"
+                step="0.01"
+                placeholder="Length">
+    </div>
+
+    <div class="form-group">
+        <label for="Genre-input">Жанр</label>
+        <input id="genre-input"
+                class="form-control"
+                name="genre"
+                type="text"
+                placeholder="Genre">
+    </div>
+
+    <div class="form-group">
+        <label for="Description-input">Описание</label>
+        <textarea   id="description-input"
+                	class="form-control"
+                	name="description"
+                	placeholder="Description"
+                	rows="7"
+                	cols="70"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Създай</button>
+</form>
