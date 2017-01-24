@@ -9,6 +9,8 @@ gem 'rake'
 
 gem 'sqlite3'
 
+gem 'bcrypt'
+
 group :test do
   gem 'rspec'
   gem 'factory_girl'
