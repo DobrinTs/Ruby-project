@@ -1,4 +1,5 @@
 class Person < ActiveRecord::Base
   validates :name, presence: true
-  has_and_belongs_to_many :movies
+  has_many :participations
+  has_many :movies, :through => :participations
 end

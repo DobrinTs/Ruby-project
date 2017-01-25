@@ -9,7 +9,6 @@
 	<p> Рейтингът му е: <%= @movie.rating / @movie.number_of_votes %>
 <% end %>
 
-<br>
 <h3> Оцени този филм: </h3>
 <p>
 	<% (1..10).each do |stars| %>
@@ -31,10 +30,13 @@
 <% if @movie.people.empty? %>
 	<p> Все още няма добавени участници за този филм </p>
 <% else %>
-	<% @movie.people.each do |person| %>
-		<p>
-			<% @person_name = person.name %>
-			<a href="/person/<%= @person_name %>"><%= @person_name %></a>
-		</p>
-	<% end %>	
+	<% @movie.participations.each do |participation| %>
+    	<p>
+      		<% @id = participation.person_id %>
+      		<% @person = Person.find_by(id: @id) %>
+      		<a href="/person/<%= @person.name %>"><%= @person.name %></a>
+      		; ролята му е: 
+      		<%= participation.role %>
+    	</p>
+  	<% end %>	
 <% end %>

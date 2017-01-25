@@ -10,11 +10,5 @@ class CreateMovies < ActiveRecord::Migration[5.0]
       t.float :rating
       t.integer :number_of_votes
     end
-
-    create_table :movies_people, id: false do |t|
-      t.belongs_to :movie, index: true
-      t.belongs_to :person, index: true
-    end
-
   end
 end

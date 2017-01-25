@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229084642) do
+ActiveRecord::Schema.define(version: 20170125130010) do
 
   create_table "movies", force: :cascade do |t|
     t.string  "name"
@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 20161229084642) do
     t.integer "number_of_votes"
   end
 
-  create_table "movies_people", id: false, force: :cascade do |t|
+  create_table "participations", id: false, force: :cascade do |t|
     t.integer "movie_id"
     t.integer "person_id"
-    t.index ["movie_id"], name: "index_movies_people_on_movie_id"
-    t.index ["person_id"], name: "index_movies_people_on_person_id"
+    t.string  "role"
+    t.index ["movie_id"], name: "index_participations_on_movie_id"
+    t.index ["person_id"], name: "index_participations_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|

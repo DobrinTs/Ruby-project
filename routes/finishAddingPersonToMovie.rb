@@ -6,7 +6,10 @@ post '/finish_adding_person_to_movie/:name' do
     @person = Person.create name: params[:person_name]
   end
 
-  @movie.people << @person
+  # @movie.participations << @person.id
+
+  @movie.participations.create(:person_id => @person.id,
+                               :role => params[:role])
 
   redirect "movie/#{@movie.name}"
 end
