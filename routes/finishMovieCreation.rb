@@ -7,16 +7,18 @@ post '/finish_movie_creation' do
   if movie
     movie.update year: params[:year], length: params[:length],
                  description: params[:description], genre: params[:genre]
+    flash[:success] = 'Филмът беше редактиран успешно!'
   else
     movie = Movie.new name: params[:movie_name], year: params[:year],
                     length: params[:length], description: params[:description],
                     genre: params[:genre], rating: 0, number_of_votes: 0
-  end
 
-  if movie.save
-    flash[:success] = 'Филмът беше записан успешно!'
-  else
-    flash[:error] = "Филмът съдържа грешки: #{movie.errors.full_messages.to_sentence}"
+
+    if movie.save
+      flash[:success] = 'Филмът беше записан успешно!'
+    else
+      flash[:error] = "Филмът съдържа грешки: #{movie.errors.full_messages.to_sentence}"
+    end
   end
 
   redirect '/movies'
