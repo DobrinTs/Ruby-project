@@ -1,7 +1,7 @@
 <h1> Виждате информация за филма "<%= @movie.name %>" </h1>
-<p> Филмът е от <%= @movie.year %> година</p>
-<p> Продължителността му е <%= @movie.length %> </p>
-<p> Жанрът му е <%= @movie.genre %> </p>
+<p> Филмът е от -<%= @movie.year %>- година</p>
+<p> Продължителността му е: <%= @movie.length %> </p>
+<p> Жанрът му е: <%= @movie.genre %> </p>
 <p> Описание: <br> <%= @movie.description %> </p>
 <% if @movie.number_of_votes == 0 %>
 	<p> Все още никой не е оценил този филм </p>
@@ -16,6 +16,10 @@
 	        <a href="/movie/<%= @movie.name %>/<%= @stars %>"><%= @stars %></a>
 	<% end %>
 </p>
+
+<form method="get" action="/movies">
+    <button type="submit" class="btn btn-default">Обратно към всички филми</button>
+</form>
 
 <h3> Участници: </h3>
 
@@ -34,9 +38,11 @@
     	<p>
       		<% @id = participation.person_id %>
       		<% @person = Person.find_by(id: @id) %>
-      		<a href="/person/<%= @person.name %>"><%= @person.name %></a>
-      		; ролята му е: 
-      		<%= participation.role %>
+      		<% if @person %>
+	      		<a href="/person/<%= @person.name %>"><%= @person.name %></a>
+	      		; ролята му е: 
+	      		<%= participation.role %>
+	      	<% end %>
     	</p>
   	<% end %>	
 <% end %>
