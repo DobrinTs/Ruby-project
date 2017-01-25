@@ -3,40 +3,45 @@
 <p> По народност е: <%= @person.nationality %> </p>
 
 <form method="get" action="/people">
-	<button type="submit" class="btn btn-default">Обратно към всички хора</button>
+  <button type="submit" class="btn btn-default">Обратно към всички хора</button>
 </form>
 
 <h3> Участва в следните филми: </h3>
+
 <% if @person.movies.empty? %>
-	<p> Все още няма добавени филми, в които е участвал </p>
+  <p> Все още няма добавени филми, в които е участвал </p>
 <% else %>
-	<% @person.participations.each do |participation| %>
-    	<p>
-      		<% @id = participation.movie_id %>
-      		<% @movie = Movie.find_by(id: @id) %>
-      		<a href="/movie/<%= @movie.name %>"><%= @movie.name %></a>
-      		; ролята му е: 
-      		<%= participation.role %>
-    	</p>
-  	<% end %>	
+  <% @person.participations.each do |participation| %>
+      <p>
+          <% @id = participation.movie_id %>
+          <% @movie = Movie.find_by(id: @id) %>
+          <% if @movie %>
+            <a href="/movie/<%= @movie.name %>"><%= @movie.name %></a>
+            ; ролята му е: 
+            <%= participation.role %>
+          <% end %>
+      </p>
+    <% end %> 
 <% end %>
 
 <h3> Хора, с които е работил заедно: </h3>
 <% if @person.movies.empty? %>
-	<p> Все още няма добавени филми, в които е участвал </p>
+  <p> Все още няма добавени филми, в които е участвал </p>
 <% else %>
-	<% @person.participations.each do |participation| %>
-    	<p>
-      		<% @id = participation.movie_id %>
-      		<% @movie = Movie.find_by(id: @id) %>
-
-      		<% @movie.people.each do |person| %>
-      			<% if person.id != @person.id %>
-      				<% @person_name = person.name %>
-      				<a href="/person/<%= @person_name %>"><%= @person_name %></a>
-      				във филма <%= @movie.name %>
-      			<% end %>
-      		<% end %>
-    	</p>
-  	<% end %>	
+  <% @person.participations.each do |participation| %>
+      <p>
+          <% @id = participation.movie_id %>
+          <% @movie = Movie.find_by(id: @id) %>
+          <% if @movie %>
+            <% @movie.people.each do |person| %>
+              <% if person.id != @person.id %>
+                <% @person_name = person.name %>
+                <a href="/person/<%= @person_name %>"><%= @person_name %></a>
+                във филма <%= @movie.name %>
+                <br>
+              <% end %>
+            <% end %>
+          <% end %>
+      </p>
+    <% end %> 
 <% end %>
