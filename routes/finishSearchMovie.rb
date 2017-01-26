@@ -22,7 +22,17 @@ post '/finish_search_movie' do
     @query.merge!({year: params[:year]})
   end
 
-  @results = Movie.where(@query)
+  @results = Movie.where(@query).all
+  # по някаква причина map! дава грешка
+  @results = @results.map do |movie|
+              [movie.name, movie.calculate_rating]
+            end
+
+  @results.sort! { |movie1, movie2| movie2[1] <=> movie1[1] }
 
   erb :finishSearchMovie
 end
+
+# <% @movie_name = movie.name %>
+# <a href="/movie/<%= @movie_name %>"><%= @movie_name %></a>
+  # <br>

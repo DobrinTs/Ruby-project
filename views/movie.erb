@@ -6,7 +6,7 @@
 <% if @movie.number_of_votes == 0 %>
 	<p> Все още никой не е оценил този филм </p>
 <% else %>
-	<p> Рейтингът му е: <%= @movie.rating / @movie.number_of_votes %>
+	<p> Рейтингът му е: <%= @movie.calculate_rating %>
 <% end %>
 
 <h3> Оцени този филм: </h3>

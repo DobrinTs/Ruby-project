@@ -10,9 +10,10 @@
 </form>
 
 <h3> Резултати </h3>
-
 <% @results.each do |movie| %>
-	<% @movie_name = movie.name %>
-	<a href="/movie/<%= @movie_name %>"><%= @movie_name %></a>
+	<% @movie_name = movie[0] %>
+	<a href="/movie/<%= @movie_name %>"><%= @movie_name %></a>:
+	<%= movie[1] %>
+	
 	<br>
 <% end %>
