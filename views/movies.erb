@@ -16,6 +16,10 @@
     <button type="submit" class="btn btn-default">Изтриване на филм</button>
 </form>
 
+<form method="get" action="/search_movie">
+    <button type="submit" class="btn btn-default">Търсене на филм</button>
+</form>
+
 <form method="get" action="/people">
     <button type="submit" class="btn btn-default">Отиди на страница с хора</button>
 </form>
@@ -28,6 +32,6 @@
 <% @movies.each do |movie| %>
     <p>
         <% @movie = movie %>
-        <a href="/movie/<%= @movie.name %>"><%= @movie.name %></a></p>    
+        <a href="/movie/<%= @movie.name %>"><%= @movie.name %></a>    
     </p>
 <% end %>

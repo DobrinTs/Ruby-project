@@ -1,0 +1,18 @@
+<h3> Критерии: </h3>
+
+<% @query.each do |key, value| %>
+	<%= key %> : <%= value %>
+	<br>
+<% end %>
+<br>
+<form method="get" action="/movies">
+    <button type="submit" class="btn btn-default">Обратно към всички филми</button>
+</form>
+
+<h3> Резултати </h3>
+
+<% @results.each do |movie| %>
+	<% @movie_name = movie.name %>
+	<a href="/movie/<%= @movie_name %>"><%= @movie_name %></a>
+	<br>
+<% end %>
