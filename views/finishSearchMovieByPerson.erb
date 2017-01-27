@@ -1,0 +1,15 @@
+<h3> Участник: </h3>
+<a href="/person/<%= @person.name %>"><%= @person.name %></a>
+<br>
+<form method="get" action="/movies">
+    <button type="submit" class="btn btn-default">Обратно към всички филми</button>
+</form>
+
+<h3> Резултати </h3>
+<% @results.each do |movie| %>
+	<% @movie_name = movie[0] %>
+	<a href="/movie/<%= @movie_name %>"><%= @movie_name %></a>:
+	<%= movie[1] %>
+	
+	<br>
+<% end %>

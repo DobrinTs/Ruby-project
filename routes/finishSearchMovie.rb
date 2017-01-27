@@ -32,7 +32,3 @@ post '/finish_search_movie' do
 
   erb :finishSearchMovie
 end
-
-# <% @movie_name = movie.name %>
-# <a href="/movie/<%= @movie_name %>"><%= @movie_name %></a>
-  # <br>

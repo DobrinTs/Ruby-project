@@ -1,0 +1,19 @@
+<h1>Търсене на филм по участие</h1>
+
+<form method="get" action="/search_movie">
+    <button type="submit" class="btn btn-default">Търсене по име/жанр/продължителност/описание</button>
+</form>
+
+<form method="post" action="/finish_search_movie_by_person">
+    <div class="form-group">
+        <label for="name-input">Име</label>
+        <input id="name-input"
+               class="form-control"
+               name="person_name"
+               type="text"
+               placeholder="Person name"
+               required>
+    </div>
+
+    <button type="submit" class="btn btn-default">Търси</button>
+</form>
