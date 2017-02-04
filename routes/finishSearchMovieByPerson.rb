@@ -6,8 +6,8 @@ post '/finish_search_movie_by_person' do
 
   # по някаква причина map! дава грешка
   @results = @results.map do |movie|
-              [movie.name, movie.calculate_rating]
-            end
+    [movie.name, movie.calculate_rating]
+  end
 
   @results.sort! { |movie1, movie2| movie2[1] <=> movie1[1] }
 

@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 
-
 Dir["#{__dir__}/models/*.rb"].each { |file| require_relative file }
 Dir["#{__dir__}/routes/*.rb"].each { |file| require_relative file }
 

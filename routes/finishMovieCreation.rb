@@ -13,7 +13,6 @@ post '/finish_movie_creation' do
                     length: params[:length], description: params[:description],
                     genre: params[:genre], rating: 0, number_of_votes: 0
 
-
     if movie.save
       flash[:success] = 'Филмът беше записан успешно!'
     else

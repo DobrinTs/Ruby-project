@@ -13,7 +13,6 @@ post '/finish_person_creation' do
                        nationality: params[:nationality],
                        birthday: params[:birthday]
 
-
     if person.save
       flash[:success] = 'Човекът беше записан успешно!'
     else

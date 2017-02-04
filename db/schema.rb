@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20170125130010) do
-
   create_table "movies", force: :cascade do |t|
     t.string  "name"
     t.integer "year"
@@ -42,5 +41,4 @@ ActiveRecord::Schema.define(version: 20170125130010) do
     t.string "password"
     t.string "rank"
   end
-
 end
